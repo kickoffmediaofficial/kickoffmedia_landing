@@ -45,7 +45,12 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
           <Card className="bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 p-6 md:p-8">
-            <form action="https://formsubmit.co/service@kickoffmedia.co" method="POST" className="space-y-6">
+            <form
+              target="_blank"
+              action="https://formsubmit.co/service@kickoffmedia.co"
+              method="POST"
+              className="space-y-6"
+            >
               <div>
                 <label htmlFor="name" className="block text-white mb-2">
                   Name
