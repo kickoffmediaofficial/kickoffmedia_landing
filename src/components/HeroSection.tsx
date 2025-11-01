@@ -64,7 +64,7 @@ export function HeroSection() {
                 </div>
                 <div>
                   <p className="text-white/90 text-sm">Client Success Rate</p>
-                  <p className="text-white text-3xl">98%</p>
+                  <p className="text-white text-3xl">100%</p>
                 </div>
               </div>
             </div>
@@ -90,9 +90,8 @@ export function HeroSection() {
                 </span>
               </h1>
               <p className="text-white/90 text-lg md:text-xl leading-relaxed">
-                We help ambitious businesses grow online through strategic
-                planning, creative excellence, and cutting-edge technology.
-                Transform your digital presence into measurable results.
+                We help ambitious businesses grow online through strategic planning, creative excellence, and
+                cutting-edge technology. Transform your digital presence into measurable results.
               </p>
             </div>
 
@@ -105,10 +104,7 @@ export function HeroSection() {
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span>
                 <span className="relative">Start Your Growth Journey</span>
-                <ArrowRight
-                  className="ml-2 group-hover:translate-x-1 transition-transform relative"
-                  size={20}
-                />
+                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform relative" size={20} />
               </Button>
               <Button
                 onClick={() => scrollToSection("portfolio")}
@@ -127,12 +123,8 @@ export function HeroSection() {
                 <div className="relative bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm p-3 md:p-4 rounded-lg border border-[#4AA3FF]/30 hover:border-[#4AA3FF]/50 transition-all h-full">
                   <div className="flex flex-col items-center justify-center text-center gap-2">
                     <Users className="text-[#4AA3FF]" size={20} />
-                    <span className="text-2xl md:text-3xl text-white">
-                      200+
-                    </span>
-                    <p className="text-white/70 text-xs md:text-sm">
-                      Happy Clients
-                    </p>
+                    <span className="text-2xl md:text-3xl text-white">10+</span>
+                    <p className="text-white/70 text-xs md:text-sm">Happy Clients</p>
                   </div>
                 </div>
               </div>
@@ -141,12 +133,8 @@ export function HeroSection() {
                 <div className="relative bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm p-3 md:p-4 rounded-lg border border-[#4AA3FF]/30 hover:border-[#4AA3FF]/50 transition-all h-full">
                   <div className="flex flex-col items-center justify-center text-center gap-2">
                     <Zap className="text-[#4AA3FF]" size={20} />
-                    <span className="text-2xl md:text-3xl text-white">
-                      500+
-                    </span>
-                    <p className="text-white/70 text-xs md:text-sm">
-                      Projects Done
-                    </p>
+                    <span className="text-2xl md:text-3xl text-white">50+</span>
+                    <p className="text-white/70 text-xs md:text-sm">Projects Done</p>
                   </div>
                 </div>
               </div>
@@ -155,10 +143,8 @@ export function HeroSection() {
                 <div className="relative bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm p-3 md:p-4 rounded-lg border border-[#4AA3FF]/30 hover:border-[#4AA3FF]/50 transition-all h-full">
                   <div className="flex flex-col items-center justify-center text-center gap-2">
                     <Award className="text-[#4AA3FF]" size={20} />
-                    <span className="text-2xl md:text-3xl text-white">15+</span>
-                    <p className="text-white/70 text-xs md:text-sm whitespace-nowrap">
-                      Years Experience
-                    </p>
+                    <span className="text-2xl md:text-3xl text-white">8+</span>
+                    <p className="text-white/70 text-xs md:text-sm whitespace-nowrap">Years Experience</p>
                   </div>
                 </div>
               </div>

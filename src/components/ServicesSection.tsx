@@ -18,32 +18,27 @@ const services = [
   {
     icon: Search,
     title: "SEO Optimization",
-    description:
-      "Dominate search rankings with our proven SEO strategies that drive organic traffic and conversions.",
+    description: "Dominate search rankings with our proven SEO strategies that drive organic traffic and conversions.",
   },
   {
     icon: Target,
-    title: "Google Ads",
-    description:
-      "Maximize ROI with targeted Google Ads campaigns optimized for performance and conversion.",
+    title: "Website Development",
+    description: "Build a modern, responsive website that engages your audience and drives conversions.",
   },
   {
     icon: FileText,
     title: "Content Creation",
-    description:
-      "Captivate your audience with high-quality content that tells your story and drives engagement.",
+    description: "Captivate your audience with high-quality content that tells your story and drives engagement.",
   },
   {
     icon: Mail,
     title: "Email Marketing",
-    description:
-      "Nurture leads and retain customers with personalized email campaigns that convert.",
+    description: "Nurture leads and retain customers with personalized email campaigns that convert.",
   },
   {
     icon: TrendingUp,
     title: "Data-Driven Strategy",
-    description:
-      "Make informed decisions with comprehensive analytics and insights that fuel sustainable growth.",
+    description: "Make informed decisions with comprehensive analytics and insights that fuel sustainable growth.",
   },
 ];
 

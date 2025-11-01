@@ -46,28 +46,20 @@ export function AboutSection() {
           {/* Text Content - Shows second on mobile, first on desktop */}
           <div className="order-2 lg:order-1">
             <div className="inline-block mb-4">
-              <span className="text-[#4AA3FF] text uppercase tracking-wider">
-                About Us
-              </span>
+              <span className="text-[#4AA3FF] text uppercase tracking-wider">About Us</span>
             </div>
-            <h2 className="text-white mb-4 md:mb-6 text-3xl md:text-4xl lg:text-5xl">
-              Who We Are
-            </h2>
+            <h2 className="text-white mb-4 md:mb-6 text-3xl md:text-4xl lg:text-5xl">Who We Are</h2>
             <div className="w-20 h-1 bg-gradient-to-r from-[#0F6EEA] to-[#4AA3FF] mb-6 md:mb-8 shadow-lg shadow-[#0F6EEA]/50"></div>
             <div className="space-y-4">
               <p className="text-white/90 text-base md:text-lg leading-relaxed">
-                KickOff Media is a forward-thinking digital marketing agency
-                dedicated to helping businesses thrive in the digital age.
-                Founded with a passion for innovation and results, we combine
-                data-driven strategies with creative excellence to deliver
-                measurable growth for our clients.
+                KickOff Media is a forward-thinking digital marketing agency dedicated to helping businesses thrive in
+                the digital age. Founded with a passion for innovation and results, we combine data-driven strategies
+                with creative excellence to deliver measurable growth for our clients.
               </p>
               <p className="text-white/90 text-base md:text-lg leading-relaxed">
-                Our mission is to empower brands to reach their full potential
-                through cutting-edge marketing solutions and personalized
-                service. We believe in building lasting partnerships with our
-                clients, understanding their unique challenges, and crafting
-                strategies that drive real, sustainable results.
+                Our mission is to empower brands to reach their full potential through cutting-edge marketing solutions
+                and personalized service. We believe in building lasting partnerships with our clients, understanding
+                their unique challenges, and crafting strategies that drive real, sustainable results.
               </p>
             </div>
 
@@ -76,33 +68,27 @@ export function AboutSection() {
                 <div className="absolute inset-0 bg-gradient-to-br from-[#0F6EEA] to-[#4AA3FF] rounded-xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity"></div>
                 <div className="relative bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/10 backdrop-blur-sm border border-[#4AA3FF]/30 rounded-xl p-4 md:p-6 hover:border-[#4AA3FF]/50 transition-all hover:-translate-y-1">
                   <div className="text-3xl md:text-4xl bg-gradient-to-r from-[#4AA3FF] to-[#5BB4FF] bg-clip-text text-transparent mb-2">
-                    500+
+                    50+
                   </div>
-                  <p className="text-white/80 text-sm md:text-base">
-                    Projects Completed
-                  </p>
+                  <p className="text-white/80 text-sm md:text-base">Projects Completed</p>
                 </div>
               </div>
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#0F6EEA] to-[#4AA3FF] rounded-xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity"></div>
                 <div className="relative bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/10 backdrop-blur-sm border border-[#4AA3FF]/30 rounded-xl p-4 md:p-6 hover:border-[#4AA3FF]/50 transition-all hover:-translate-y-1">
                   <div className="text-3xl md:text-4xl bg-gradient-to-r from-[#4AA3FF] to-[#5BB4FF] bg-clip-text text-transparent mb-2">
-                    200+
+                    10+
                   </div>
-                  <p className="text-white/80 text-sm md:text-base">
-                    Happy Clients
-                  </p>
+                  <p className="text-white/80 text-sm md:text-base">Happy Clients</p>
                 </div>
               </div>
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#0F6EEA] to-[#4AA3FF] rounded-xl blur-lg opacity-20 group-hover:opacity-30 transition-opacity"></div>
                 <div className="relative bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/10 backdrop-blur-sm border border-[#4AA3FF]/30 rounded-xl p-4 md:p-6 hover:border-[#4AA3FF]/50 transition-all hover:-translate-y-1">
                   <div className="text-3xl md:text-4xl bg-gradient-to-r from-[#4AA3FF] to-[#5BB4FF] bg-clip-text text-transparent mb-2">
-                    15+
+                    8+
                   </div>
-                  <p className="text-white/80 text-sm md:text-base">
-                    Years Experience
-                  </p>
+                  <p className="text-white/80 text-sm md:text-base">Years Experience</p>
                 </div>
               </div>
               <div className="relative group">
@@ -111,9 +97,7 @@ export function AboutSection() {
                   <div className="text-3xl md:text-4xl bg-gradient-to-r from-[#4AA3FF] to-[#5BB4FF] bg-clip-text text-transparent mb-2">
                     98%
                   </div>
-                  <p className="text-white/80 text-sm md:text-base">
-                    Client Retention
-                  </p>
+                  <p className="text-white/80 text-sm md:text-base">Client Retention</p>
                 </div>
               </div>
             </div>

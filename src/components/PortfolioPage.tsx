@@ -6,87 +6,16 @@ import { ExternalLink, Filter, Menu, X } from "lucide-react";
 import { Footer } from "./Footer";
 import Image from "next/image";
 import logo from "../assets/Logo.png";
-import cover1 from "../assets/ESSENTIAL-cover.png";
-import cover2 from "../assets/PRINTER-cover.png";
-import cover3 from "../assets/SaqlainPortfolio-cover.jpg";
-import cover4 from "../assets/PitchFi-cover.jpg";
-import cover5 from "../assets/swippy-cover.jpg";
-import cover6 from "../assets/MystifyingBardeen-cover.jpg";
-import cover7 from "../assets/shopian-cover.jpg";
-
-const allProjects = [
-  {
-    title: "ESSENTIAL HAIR SALON",
-    description: "Designed the website for a hair salon.",
-    image: cover1,
-    category: "Web Development",
-    url: "https://essential.salon/",
-    metrics: { duration: "6 months", platform: "Multi-channel" },
-  },
-  {
-    title: "SAQLAIN PRINTERS WEBSITE",
-    description:
-      "Saqlain Printers - Your one-stop solution for high-quality printing, design, and branding services.",
-    image: cover2,
-    category: "Web Development",
-    url: "https://saqlainprinters.web.app/",
-    metrics: { duration: "6 months", platform: "Multi-channel" },
-  },
-  {
-    title: "Saqlain Portfolio",
-    description:
-      "A personal portfolio showcasing Saqlains skills, projects, and expertise in modern web development and design.",
-    image: cover3,
-    category: "Web Development",
-    url: "https://saqlain1020.com/",
-    metrics: { duration: "6 months", platform: "Multi-channel" },
-  },
-  {
-    title: "PitchFi | Smarter Pitch Decks",
-    description:
-      "A streamlined platform to craft, share and track investor-ready pitch decks with ease.",
-    image: cover4,
-    category: "Web Development",
-    url: "https://pitchfi.io/",
-    metrics: { duration: "6 months", platform: "Multi-channel" },
-  },
-  {
-    title: "Swippy - User Profile ",
-    description:
-      "A user profile page showing personal information and activity in a sample web application.",
-    image: cover5,
-    category: "Web Development",
-    url: "https://competent-jennings-aee101.netlify.app/profile/User1",
-    metrics: { duration: "6 months", platform: "Multi-channel" },
-  },
-  {
-    title: "Mystifying Bardeen App",
-    description:
-      "A landing or demo web application showcasing features of the “Mystifying Bardeen”",
-    image: cover6,
-    category: "Web Development",
-    url: "https://mystifying-bardeen-45fd62.netlify.app/",
-    metrics: { duration: "6 months", platform: "Multi-channel" },
-  },
-  {
-    title: "Shopian App - Online Marketplace",
-    description:
-      "A user-friendly e-commerce platform where you can browse products, view detailed items, and shop seamlessly from web to checkout.",
-    image: cover7,
-    category: "Web Development",
-    url: "https://shopian-app.web.app/authentication",
-    metrics: { duration: "6 months", platform: "Multi-channel" },
-  },
-];
+import { ProjectCategory } from "@/types";
+import { AllProjects } from "@/types/projects";
 
 const categories = [
   "All",
-  "Digital Marketing",
-  "App Development",
-  "Web Development",
-  "Social Media",
-  "Branding",
-  "SEO",
+  ProjectCategory.DigitalMarketing,
+  ProjectCategory.Blockchain,
+  ProjectCategory.AppDevelopment,
+  ProjectCategory.WebDevelopment,
+  ProjectCategory.SEO,
 ];
 
 interface PortfolioPageProps {
@@ -94,13 +23,13 @@ interface PortfolioPageProps {
 }
 
 export function PortfolioPage({ onBack }: PortfolioPageProps) {
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState<ProjectCategory | "All">("All");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const filteredProjects =
     selectedCategory === "All"
-      ? allProjects
-      : allProjects.filter((project) => project.category === selectedCategory);
+      ? AllProjects
+      : AllProjects.filter((project) => project.category.includes(selectedCategory));
 
   const handleProjectClick = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
@@ -131,47 +60,24 @@ export function PortfolioPage({ onBack }: PortfolioPageProps) {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <div
-              className="flex items-center space-x-3 cursor-pointer"
-              onClick={onBack}
-            >
-              <Image
-                src={logo}
-                alt="KickOff Media"
-                width={48}
-                height={48}
-                className="w-12 h-12 object-contain"
-              />
+            <div className="flex items-center space-x-3 cursor-pointer" onClick={onBack}>
+              <Image src={logo} alt="KickOff Media" width={48} height={48} className="w-12 h-12 object-contain" />
               <span className="text-white text-xl">KickOff Media</span>
             </div>
 
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-8">
-              <button
-                onClick={onBack}
-                className="text-white/80 hover:text-[#4AA3FF] transition-colors"
-              >
+              <button onClick={onBack} className="text-white/80 hover:text-[#4AA3FF] transition-colors">
                 Home
               </button>
-              <button
-                onClick={onBack}
-                className="text-white/80 hover:text-[#4AA3FF] transition-colors"
-              >
+              <button onClick={onBack} className="text-white/80 hover:text-[#4AA3FF] transition-colors">
                 Services
               </button>
-              <button
-                onClick={onBack}
-                className="text-white/80 hover:text-[#4AA3FF] transition-colors"
-              >
+              <button onClick={onBack} className="text-white/80 hover:text-[#4AA3FF] transition-colors">
                 About Us
               </button>
-              <button className="text-[#4AA3FF] transition-colors">
-                Portfolio
-              </button>
-              <button
-                onClick={onBack}
-                className="text-white/80 hover:text-[#4AA3FF] transition-colors"
-              >
+              <button className="text-[#4AA3FF] transition-colors">Portfolio</button>
+              <button onClick={onBack} className="text-white/80 hover:text-[#4AA3FF] transition-colors">
                 Contact
               </button>
             </nav>
@@ -187,10 +93,7 @@ export function PortfolioPage({ onBack }: PortfolioPageProps) {
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              className="md:hidden text-white"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
+            <button className="md:hidden text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>
@@ -251,9 +154,7 @@ export function PortfolioPage({ onBack }: PortfolioPageProps) {
               </span>
             </h1>
             <div className="w-20 md:w-24 h-1 bg-gradient-to-r from-[#0F6EEA] via-[#4AA3FF] to-[#5BB4FF] mx-auto mb-3 md:mb-4 shadow-lg shadow-[#0F6EEA]/50"></div>
-            <p className="text-white/80 text-base md:text-lg px-4">
-              Explore all our successful projects and campaigns
-            </p>
+            <p className="text-white/80 text-base md:text-lg px-4">Explore all our successful projects and campaigns</p>
           </div>
         </div>
       </div>
@@ -263,16 +164,14 @@ export function PortfolioPage({ onBack }: PortfolioPageProps) {
         <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8 flex-wrap justify-center">
           <div className="flex items-center gap-2 text-[#4AA3FF]">
             <Filter size={18} className="md:w-5 md:h-5" />
-            <span className="text-xs md:text-sm uppercase tracking-wider">
-              Filter by:
-            </span>
+            <span className="text-xs md:text-sm uppercase tracking-wider">Filter by:</span>
           </div>
           {categories.map((category) => (
             <Badge
               key={category}
-              onClick={() => setSelectedCategory(category)}
+              onClick={() => setSelectedCategory(category as ProjectCategory)}
               className={`cursor-pointer px-3 md:px-5 py-2 md:py-2.5 text-xs md:text-sm transition-all ${
-                selectedCategory === category
+                category.includes(selectedCategory)
                   ? "bg-gradient-to-r from-[#0F6EEA] via-[#4AA3FF] to-[#5BB4FF] text-white shadow-lg shadow-[#0F6EEA]/40 border-0"
                   : "bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 text-white/80 hover:bg-[#4AA3FF]/20 border border-[#4AA3FF]/30 hover:border-[#4AA3FF]/50"
               }`}
@@ -301,10 +200,15 @@ export function PortfolioPage({ onBack }: PortfolioPageProps) {
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/90 via-[#0A1628]/40 to-transparent"></div>
-                <div className="absolute top-3 md:top-4 right-3 md:right-4">
-                  <Badge className="bg-gradient-to-r from-[#0F6EEA] via-[#4AA3FF] to-[#5BB4FF] text-white border-0 shadow-lg text-xs md:text-sm px-2 md:px-3 py-1 md:py-1.5">
-                    {project.category}
-                  </Badge>
+                <div className="absolute top-3 md:top-4 right-3 md:right-4 gap-2 flex">
+                  {project.category.map((item) => (
+                    <Badge
+                      key={item}
+                      className="bg-gradient-to-r from-[#0F6EEA] via-[#4AA3FF] to-[#5BB4FF] text-white border-0 shadow-lg text-xs md:text-sm px-2 md:px-3 py-1 md:py-1.5"
+                    >
+                      {item}
+                    </Badge>
+                  ))}
                 </div>
                 <div className="absolute bottom-3 md:bottom-4 left-3 md:left-4 right-3 md:right-4">
                   <div className="flex gap-2 flex-wrap">
@@ -322,13 +226,9 @@ export function PortfolioPage({ onBack }: PortfolioPageProps) {
                     size={18}
                   />
                 </h3>
-                <p className="text-white/70 mb-3 text-sm md:text-base">
-                  {project.description}
-                </p>
+                <p className="text-white/70 mb-3 text-sm md:text-base">{project.description}</p>
                 <div className="flex items-center justify-between text-xs md:text-sm text-white/60">
-                  <span className="flex items-center gap-1">
-                    📍 {project.metrics.platform}
-                  </span>
+                  <span className="flex items-center gap-1">📍 {project.metrics.platform}</span>
                 </div>
               </div>
             </Card>
