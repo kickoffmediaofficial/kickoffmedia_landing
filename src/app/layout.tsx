@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./index.css";
-import Head from "next/head";
-import { GtagBody, GtagHead } from "@/components/tracking/Gtag";
+import { GtagBody } from "@/components/tracking/Gtag";
+import dynamic from "next/dynamic";
+const GtagHead = dynamic(() => import("@/components/tracking/Gtag").then((mod) => mod.GtagHead));
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kickoffmedia.co"),
@@ -17,10 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Head>
-        <GtagHead />
-      </Head>
       <body className={`antialiased flex-1`}>
+        <GtagHead />
         <GtagBody />
         {children}
       </body>
