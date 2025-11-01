@@ -8,10 +8,10 @@ import {
 } from "./ui/carousel";
 import { Star } from "lucide-react";
 import Image from "next/image";
-import logo1 from "../assets/ESSENTIAL HAIR SALOON LOGO-01.png";
-import logo2 from "../assets/FFLogo.jpeg";
-import logo3 from "../assets/global_solutions.jpeg";
-import logo4 from "../assets/healthcare.png";
+import logo1 from "@/assets/ESSENTIAL HAIR SALOON LOGO-01.png";
+import logo2 from "@/assets/FFLogo.jpeg";
+import logo3 from "@/assets/global_solutions.jpeg";
+import logo4 from "@/assets/healthcare.png";
 
 const testimonials = [
   {

@@ -5,7 +5,7 @@ import { Badge } from "./ui/badge";
 import { ExternalLink, Filter, Menu, X } from "lucide-react";
 import { Footer } from "./Footer";
 import Image from "next/image";
-import logo from "../assets/Logo.png";
+import logo from "@/assets/Logo.png";
 import { ProjectCategory } from "@/types";
 import { AllProjects } from "@/types/projects";
 
