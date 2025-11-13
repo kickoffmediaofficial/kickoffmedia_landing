@@ -74,6 +74,61 @@ export function ServicesSection() {
           </p>
         </div>
 
+        {/* Marketing Results Highlight */}
+        <div className="mb-12 md:mb-16">
+          <Card className="relative bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 p-6 md:p-8 hover:bg-[#0F6EEA]/15 hover:border-[#4AA3FF]/50 hover:shadow-xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 group overflow-hidden hover:-translate-y-1">
+            {/* Glowing effect on hover */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#0F6EEA]/0 to-[#4AA3FF]/0 group-hover:from-[#0F6EEA]/10 group-hover:to-[#4AA3FF]/10 transition-all duration-300"></div>
+
+            <div className="relative z-10">
+              <div className="flex flex-col lg:flex-row items-start lg:items-center gap-6 lg:gap-8">
+                {/* Icon Section */}
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl bg-gradient-to-br from-[#0F6EEA] to-[#4AA3FF] flex items-center justify-center group-hover:scale-110 group-hover:shadow-lg group-hover:shadow-[#0F6EEA]/40 transition-all duration-300 relative flex-shrink-0">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#0F6EEA] to-[#4AA3FF] rounded-xl blur-md opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                  <TrendingUp className="text-white relative z-10" size={28} />
+                </div>
+
+                {/* Content Section */}
+                <div className="flex-1">
+                  <h3 className="text-white mb-3 text-lg md:text-xl font-semibold">
+                    Proven Results That Speak for Themselves
+                  </h3>
+                  <p className="text-white/70 text-sm md:text-base mb-4">
+                    Our campaigns have generated <span className="text-[#4AA3FF] font-semibold">2,881+ conversations</span>, reached{" "}
+                    <span className="text-[#4AA3FF] font-semibold">100K+ people</span>, and delivered exceptional ROI across multiple industries.
+                  </p>
+                  <button
+                    onClick={() => (window.location.href = "/marketing")}
+                    className="inline-flex items-center gap-2 text-[#4AA3FF] hover:text-white text-sm font-medium transition-colors group/btn"
+                  >
+                    View Full Marketing Portfolio
+                    <TrendingUp className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                  </button>
+                </div>
+
+                {/* Stats Grid */}
+                <div className="grid grid-cols-3 gap-3 lg:gap-4 w-full lg:w-auto">
+                  <div className="text-center p-3 lg:p-4 bg-[#0A1628]/30 rounded-lg border border-[#4AA3FF]/10 group-hover:border-[#4AA3FF]/30 transition-colors">
+                    <div className="text-xl md:text-2xl font-bold text-white mb-1">2,881+</div>
+                    <div className="text-white/60 text-xs">Conversations</div>
+                  </div>
+                  <div className="text-center p-3 lg:p-4 bg-[#0A1628]/30 rounded-lg border border-[#4AA3FF]/10 group-hover:border-[#4AA3FF]/30 transition-colors">
+                    <div className="text-xl md:text-2xl font-bold text-white mb-1">100K+</div>
+                    <div className="text-white/60 text-xs">Reach</div>
+                  </div>
+                  <div className="text-center p-3 lg:p-4 bg-[#0A1628]/30 rounded-lg border border-[#4AA3FF]/10 group-hover:border-[#4AA3FF]/30 transition-colors">
+                    <div className="text-xl md:text-2xl font-bold text-white mb-1">8</div>
+                    <div className="text-white/60 text-xs">Campaigns</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Decorative corner */}
+            <div className="absolute top-0 right-0 w-16 h-16 border-t border-r border-[#4AA3FF]/20 rounded-tr-lg opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          </Card>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;

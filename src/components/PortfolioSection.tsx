@@ -144,14 +144,21 @@ export function PortfolioSection() {
           ))}
         </div>
 
-        <div className="text-center">
+        <div className="text-center flex flex-col md:flex-row gap-4 justify-center items-center">
           <Button
             onClick={handleShowMore}
             variant="outline"
             size="lg"
-            className="border-2 border-[#4AA3FF]/50 text-[#4AA3FF] hover:bg-gradient-to-r hover:from-[#0F6EEA] hover:to-[#4AA3FF] hover:text-white hover:border-transparent transition-all shadow-lg hover:shadow-[#0F6EEA]/30 px-6 md:px-8 py-5 md:py-6 text-base md:text-lg"
+            className="border-2 border-[#4AA3FF]/50 text-[#4AA3FF] hover:bg-gradient-to-r hover:from-[#0F6EEA] hover:to-[#4AA3FF] hover:text-white hover:border-transparent transition-all shadow-lg hover:shadow-[#0F6EEA]/30 px-6 md:px-8 py-5 md:py-6 text-base md:text-lg w-full md:w-auto"
           >
             Show More Projects
+          </Button>
+          <Button
+            onClick={() => (window.location.href = "/marketing")}
+            size="lg"
+            className="bg-gradient-to-r from-[#0F6EEA] to-[#4AA3FF] hover:from-[#0E63D5] hover:to-[#3A92E5] shadow-lg shadow-[#0F6EEA]/30 transition-all px-6 md:px-8 py-5 md:py-6 text-base md:text-lg w-full md:w-auto"
+          >
+            View Marketing Results
           </Button>
         </div>
       </div>
