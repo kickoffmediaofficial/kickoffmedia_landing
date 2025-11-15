@@ -99,11 +99,11 @@ export function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed top-20 left-0 right-0 w-full bg-gradient-to-br from-[#0B1D3F] to-[#0A1628] z-40 md:hidden transform transition-all duration-300 ease-in-out ${
+        className={`fixed top-20 left-0 right-0 w-full backdrop-blur-sm bg-black/60  from-[#0B1D3F] to-[#0A1628] z-40 md:hidden transform transition-all duration-300 ease-in-out ${
           isMobileMenuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
         } shadow-2xl border-b border-[#4AA3FF]/20`}
       >
-        <div className="px-6 py-6">
+        <div className="px-6 py-6 bg-[#0A1628]/95 backdrop-blur-lg">
           <nav className="flex flex-col space-y-2" onClick={() => setIsMobileMenuOpen(false)}>
             <Link
               href={"/#hero"}
