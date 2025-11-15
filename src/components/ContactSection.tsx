@@ -126,7 +126,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="text-white mb-2 text-base md:text-lg">Phone</h4>
-                  <p className="text-white/70 text-sm md:text-base">+1 (555) 123-4567</p>
+                  <p className="text-white/70 text-sm md:text-base">+92 (315) 2886660</p>
                   <p className="text-white/70 text-sm md:text-base">Mon-Fri 9am-6pm EST</p>
                 </div>
               </div>
