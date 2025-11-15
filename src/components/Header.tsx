@@ -59,6 +59,12 @@ export function Header() {
               <Link href={"/#portfolio"} className="text-white/80 hover:text-[#4AA3FF] transition-colors">
                 Portfolio
               </Link>
+              <Link href={"/marketing"} className="text-white/80 hover:text-[#4AA3FF] transition-colors">
+                Campaigns
+              </Link>
+              <Link href={"/marketing#case-studies"} className="text-white/80 hover:text-[#4AA3FF] transition-colors">
+                Case Studies
+              </Link>
               <Link href={"/#contact"} className="text-white/80 hover:text-[#4AA3FF] transition-colors">
                 Contact
               </Link>
@@ -98,44 +104,55 @@ export function Header() {
         } shadow-2xl border-b border-[#4AA3FF]/20`}
       >
         <div className="px-6 py-6">
-          <nav className="flex flex-col space-y-2">
-            <button
-              onClick={() => scrollToSection("hero")}
+          <nav className="flex flex-col space-y-2" onClick={() => setIsMobileMenuOpen(false)}>
+            <Link
+              href={"/#hero"}
               className="text-white/90 hover:text-white hover:bg-[#4AA3FF]/10 transition-all text-left px-6 py-4 rounded-xl"
             >
               Home
-            </button>
-            <button
-              onClick={() => scrollToSection("services")}
+            </Link>
+            <Link
+              href={"/#services"}
               className="text-white/90 hover:text-white hover:bg-[#4AA3FF]/10 transition-all text-left px-6 py-4 rounded-xl"
             >
               Services
-            </button>
-            <button
-              onClick={() => scrollToSection("about")}
+            </Link>
+            <Link
+              href={"/#about"}
               className="text-white/90 hover:text-white hover:bg-[#4AA3FF]/10 transition-all text-left px-6 py-4 rounded-xl"
             >
               About Us
-            </button>
-            <button
-              onClick={() => scrollToSection("portfolio")}
+            </Link>
+            <Link
+              href={"/#portfolio"}
               className="text-white/90 hover:text-white hover:bg-[#4AA3FF]/10 transition-all text-left px-6 py-4 rounded-xl"
             >
               Portfolio
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
+            </Link>
+            <Link
+              href={"/marketing"}
+              className="text-white/90 hover:text-white hover:bg-[#4AA3FF]/10 transition-all text-left px-6 py-4 rounded-xl"
+            >
+              Campaigns
+            </Link>
+            <Link
+              href={"/marketing#case-studies"}
+              className="text-white/90 hover:text-white hover:bg-[#4AA3FF]/10 transition-all text-left px-6 py-4 rounded-xl"
+            >
+              Case Studies
+            </Link>
+            <Link
+              href={"/#contact"}
               className="text-white/90 hover:text-white hover:bg-[#4AA3FF]/10 transition-all text-left px-6 py-4 rounded-xl"
             >
               Contact
-            </button>
+            </Link>
             <div className="pt-4 px-2">
-              <Button
-                onClick={() => scrollToSection("contact")}
-                className="bg-gradient-to-r from-[#0F6EEA] to-[#4AA3FF] hover:from-[#0E63D5] hover:to-[#3A92E5] shadow-lg shadow-[#0F6EEA]/20 transition-all w-full py-6"
-              >
-                Get Started
-              </Button>
+              <Link href={"/#contact"}>
+                <Button className="bg-gradient-to-r from-[#0F6EEA] to-[#4AA3FF] hover:from-[#0E63D5] hover:to-[#3A92E5] shadow-lg shadow-[#0F6EEA]/20 transition-all w-full py-6">
+                  Get Started
+                </Button>
+              </Link>
             </div>
           </nav>
         </div>

@@ -14,7 +14,8 @@ import {
   BarChart3,
   Target,
 } from "lucide-react";
-import { MarketingCampaigns, MarketingCampaign } from "@/types/marketing";
+import { MarketingCampaigns } from "@/types/marketing";
+import { CaseStudiesSection } from "./CaseStudiesSection";
 
 const objectiveIcons = {
   "Messaging Conversations": MessageSquare,
@@ -177,8 +178,8 @@ export function MarketingPortfolio() {
                 className="gap-0 bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 overflow-hidden group hover:border-[#4AA3FF]/60 hover:shadow-2xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 hover:-translate-y-2"
               >
                 {/* Header */}
-                <div className={`bg-gradient-to-r ${gradientClass} p-6 relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-black/20"></div>
+                <div className={`bg-gradient-to-r p-6 relative overflow-hidden`}>
+                  <div className="absolute inset-0 "></div>
                   <div className="relative z-10">
                     <div className="flex items-start justify-between mb-4">
                       <div>
@@ -239,14 +240,17 @@ export function MarketingPortfolio() {
           })}
         </div>
 
+        {/* Case Studies Section */}
+        <CaseStudiesSection />
+
         {/* CTA Section */}
         <Card
           style={{ marginTop: "24px" }}
           className="gap-0 bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 overflow-hidden group hover:border-[#4AA3FF]/60 hover:shadow-2xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 hover:-translate-y-2"
         >
           {/* Header */}
-          <div className="bg-gradient-to-r from-purple-500 to-pink-500 p-6 relative overflow-hidden">
-            <div className="absolute inset-0 bg-black/20"></div>
+          <div className="bg-gradient-to-r p-6 relative overflow-hidden">
+            <div className="absolute inset-0 "></div>
             <div className="relative z-10">
               <div className="flex items-start justify-between mb-4">
                 <div>
@@ -267,7 +271,7 @@ export function MarketingPortfolio() {
           </div>
 
           {/* Content */}
-          <div className="p-6">
+          <div className="px-6 pb-6">
             <p className="text-white/80 mb-6 text-sm">
               Let&apos;s discuss how we can help your business grow with data-driven marketing strategies that deliver
               real results.

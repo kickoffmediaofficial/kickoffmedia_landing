@@ -1,13 +1,7 @@
 import { Button } from "./ui/button";
-import {
-  ArrowRight,
-  CheckCircle2,
-  Users,
-  Award,
-  Sparkles,
-  Zap,
-} from "lucide-react";
+import { ArrowRight, CheckCircle2, Users, Award, Sparkles, Zap } from "lucide-react";
 import { Badge } from "./ui/badge";
+import Link from "next/link";
 
 export function HeroSection() {
   const scrollToSection = (id: string) => {
@@ -97,23 +91,46 @@ export function HeroSection() {
 
             {/* CTAs with enhanced effects */}
             <div className="flex flex-col sm:flex-row gap-4 pt-2">
-              <Button
-                onClick={() => scrollToSection("contact")}
-                size="lg"
-                className="relative bg-gradient-to-r from-[#0F6EEA] via-[#2B8BF5] to-[#4AA3FF] hover:from-[#0E63D5] hover:via-[#267DD6] hover:to-[#3A92E5] text-white shadow-2xl shadow-[#0F6EEA]/40 transition-all px-6 md:px-8 py-5 md:py-6 text-base md:text-lg group overflow-hidden"
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span>
-                <span className="relative">Start Your Growth Journey</span>
-                <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform relative" size={20} />
-              </Button>
-              <Button
-                onClick={() => scrollToSection("portfolio")}
-                size="lg"
-                variant="outline"
-                className="border-2 border-[#4AA3FF]/60 text-black hover:bg-gradient-to-r hover:from-[#0F6EEA]/20 hover:to-[#4AA3FF]/20 hover:border-[#5BB4FF] backdrop-blur-sm transition-all px-6 md:px-8 py-5 md:py-6 text-base md:text-lg shadow-lg shadow-[#4AA3FF]/10"
-              >
-                View Projects
-              </Button>
+              <Link href="/#contact">
+                <Button
+                  size="lg"
+                  className="relative bg-linear-to-r from-[#0F6EEA] via-[#2B8BF5] to-[#4AA3FF] hover:from-[#0E63D5] hover:via-[#267DD6] hover:to-[#3A92E5] text-white shadow-2xl shadow-[#0F6EEA]/40 transition-all px-6 md:px-8 py-5 md:py-6 text-base md:text-lg group overflow-hidden"
+                >
+                  <span className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000"></span>
+                  <span className="relative">Start Your Growth Journey</span>
+                  <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform relative" size={20} />
+                </Button>
+              </Link>
+              <Link href="/#portfolio">
+                <Button
+                  size="lg"
+                  className="text-white bg-transparent hover:bg-[#4AA3FF]/10 border border-[#4AA3FF]/60 shadow-2xl shadow-[#0F6EEA]/40 transition-all px-6 md:px-8 py-5 md:py-6 text-base md:text-lg group overflow-hidden"
+                >
+                  <span className="relative">View Projects</span>
+                </Button>
+              </Link>
+            </div>
+
+            {/* Additional Navigation Links */}
+            <div className="flex flex-wrap gap-3">
+              <Link href="/marketing">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border hover:text-white bg-transparent border-[#4AA3FF]/40 text-[#4AA3FF] hover:bg-[#4AA3FF]/10 hover:border-[#4AA3FF]/60 transition-all text-sm"
+                >
+                  View Campaigns
+                </Button>
+              </Link>
+              <Link href="/marketing#case-studies">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="border hover:text-white bg-transparent border-[#4AA3FF]/40 text-[#4AA3FF] hover:bg-[#4AA3FF]/10 hover:border-[#4AA3FF]/60 transition-all text-sm"
+                >
+                  View Case Studies
+                </Button>
+              </Link>
             </div>
 
             {/* Stats with enhanced cards */}

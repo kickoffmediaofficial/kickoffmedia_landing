@@ -1,6 +1,6 @@
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, FolderOpen, TrendingUp, FileText } from "lucide-react";
 import Image from "next/image";
 import { Projects } from "@/types/projects";
 
@@ -144,21 +144,40 @@ export function PortfolioSection() {
           ))}
         </div>
 
-        <div className="text-center flex flex-col md:flex-row gap-4 justify-center items-center">
-          <Button
+        <div className="text-center flex flex-row flex-wrap gap-3 justify-center items-center">
+          {/* TODO: Add back in later maybe, this opens up a modal or something like that */}
+          {/* <Button
             onClick={handleShowMore}
             variant="outline"
-            size="lg"
-            className="border-2 border-[#4AA3FF]/50 text-[#4AA3FF] hover:bg-gradient-to-r hover:from-[#0F6EEA] hover:to-[#4AA3FF] hover:text-white hover:border-transparent transition-all shadow-lg hover:shadow-[#0F6EEA]/30 px-6 md:px-8 py-5 md:py-6 text-base md:text-lg w-full md:w-auto"
+            size="default"
+            className="group relative border-2 border-[#4AA3FF]/50 text-[#4AA3FF] hover:bg-gradient-to-r hover:from-[#0F6EEA] hover:to-[#4AA3FF] hover:text-white hover:border-transparent transition-all duration-300 shadow-lg hover:shadow-[#0F6EEA]/40 hover:shadow-xl px-4 py-2.5 text-sm font-semibold hover:scale-105 overflow-hidden whitespace-nowrap"
           >
-            Show More Projects
-          </Button>
+            <span className="relative z-10 flex items-center gap-2">
+              <FolderOpen className="w-4 h-4 transition-transform group-hover:rotate-12" />
+              Explore All Projects
+            </span>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#0F6EEA] to-[#4AA3FF] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </Button> */}
           <Button
             onClick={() => (window.location.href = "/marketing")}
-            size="lg"
-            className="bg-gradient-to-r from-[#0F6EEA] to-[#4AA3FF] hover:from-[#0E63D5] hover:to-[#3A92E5] shadow-lg shadow-[#0F6EEA]/30 transition-all px-6 md:px-8 py-5 md:py-6 text-base md:text-lg w-full md:w-auto"
+            size="default"
+            className="group relative bg-gradient-to-r from-[#0F6EEA] to-[#4AA3FF] hover:from-[#0E63D5] hover:to-[#3A92E5] text-white shadow-lg shadow-[#0F6EEA]/30 hover:shadow-[#0F6EEA]/50 hover:shadow-xl transition-all duration-300 px-4 py-2.5 text-sm font-semibold hover:scale-105 whitespace-nowrap"
           >
-            View Marketing Results
+            <span className="relative z-10 flex items-center gap-2">
+              <TrendingUp className="w-4 h-4 transition-transform group-hover:translate-y-[-2px]" />
+              See Marketing Results
+            </span>
+          </Button>
+          <Button
+            onClick={() => (window.location.href = "/marketing#case-studies")}
+            variant="outline"
+            size="default"
+            className="group relative border-2 border-[#4AA3FF]/50 text-[#4AA3FF] hover:bg-linear-to-r hover:from-[#0F6EEA]/20 hover:to-[#4AA3FF]/20 hover:border-[#4AA3FF] transition-all duration-300 shadow-lg hover:shadow-[#0F6EEA]/40 hover:shadow-xl px-4 py-2.5 text-sm font-semibold hover:scale-105 whitespace-nowrap"
+          >
+            <span className="relative z-10 flex items-center gap-2">
+              <FileText className="w-4 h-4 transition-transform group-hover:scale-110" />
+              Browse Case Studies
+            </span>
           </Button>
         </div>
       </div>

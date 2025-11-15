@@ -60,17 +60,12 @@ export function ServicesSection() {
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="text-center mb-12 md:mb-16">
           <div className="inline-block mb-4">
-            <span className="text-[#4AA3FF] text uppercase tracking-wider">
-              Our Services
-            </span>
+            <span className="text-[#4AA3FF] text uppercase tracking-wider">Our Services</span>
           </div>
-          <h2 className="text-white mb-4 text-3xl md:text-4xl lg:text-5xl">
-            What We Do
-          </h2>
+          <h2 className="text-white mb-4 text-3xl md:text-4xl lg:text-5xl">What We Do</h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#0F6EEA] to-[#4AA3FF] mx-auto mb-6 md:mb-8 shadow-lg shadow-[#0F6EEA]/50"></div>
           <p className="text-white/80 max-w-2xl mx-auto text-base md:text-lg px-4">
-            Comprehensive digital marketing solutions tailored to your business
-            goals
+            Comprehensive digital marketing solutions tailored to your business goals
           </p>
         </div>
 
@@ -94,16 +89,27 @@ export function ServicesSection() {
                     Proven Results That Speak for Themselves
                   </h3>
                   <p className="text-white/70 text-sm md:text-base mb-4">
-                    Our campaigns have generated <span className="text-[#4AA3FF] font-semibold">2,881+ conversations</span>, reached{" "}
-                    <span className="text-[#4AA3FF] font-semibold">100K+ people</span>, and delivered exceptional ROI across multiple industries.
+                    Our campaigns have generated{" "}
+                    <span className="text-[#4AA3FF] font-semibold">2,881+ conversations</span>, reached{" "}
+                    <span className="text-[#4AA3FF] font-semibold">100K+ people</span>, and delivered exceptional ROI
+                    across multiple industries.
                   </p>
-                  <button
-                    onClick={() => (window.location.href = "/marketing")}
-                    className="inline-flex items-center gap-2 text-[#4AA3FF] hover:text-white text-sm font-medium transition-colors group/btn"
-                  >
-                    View Full Marketing Portfolio
-                    <TrendingUp className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
+                  <div className="flex flex-wrap gap-3">
+                    <button
+                      onClick={() => (window.location.href = "/marketing")}
+                      className="inline-flex items-center gap-2 text-[#4AA3FF] hover:text-white text-sm font-medium transition-colors group/btn"
+                    >
+                      View Full Marketing Portfolio
+                      <TrendingUp className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                    <button
+                      onClick={() => (window.location.href = "/marketing#case-studies")}
+                      className="inline-flex items-center gap-2 text-white/70 hover:text-[#4AA3FF] text-sm font-medium transition-colors group/btn"
+                    >
+                      View Case Studies
+                      <TrendingUp className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
+                  </div>
                 </div>
 
                 {/* Stats Grid */}
@@ -145,12 +151,8 @@ export function ServicesSection() {
                     <div className="absolute inset-0 bg-gradient-to-br from-[#0F6EEA] to-[#4AA3FF] rounded-xl blur-md opacity-50 group-hover:opacity-75 transition-opacity"></div>
                     <Icon className="text-white relative z-10" size={28} />
                   </div>
-                  <h3 className="text-white mb-3 text-lg md:text-xl">
-                    {service.title}
-                  </h3>
-                  <p className="text-white/70 text-sm md:text-base">
-                    {service.description}
-                  </p>
+                  <h3 className="text-white mb-3 text-lg md:text-xl">{service.title}</h3>
+                  <p className="text-white/70 text-sm md:text-base">{service.description}</p>
                 </div>
 
                 {/* Decorative corner */}
