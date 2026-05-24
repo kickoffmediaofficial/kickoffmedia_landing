@@ -73,6 +73,22 @@ export function HeroSection() {
 
           {/* Text Content - Shows second on mobile, first on desktop */}
           <div className="text-left space-y-8 order-2 lg:order-1">
+            {/* Award trust signal */}
+            <a
+              href="https://www.qualitybusinessawards.com/2026/the-best-Hair-Salon-in-Kirkland-Washington/Essential-Hair-Salon"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 hover:border-[#D4AF37]/60 hover:bg-[#D4AF37]/15 transition-all duration-300 group cursor-pointer"
+            >
+              <div className="flex items-center justify-center w-5 h-5 rounded-full bg-[#D4AF37]/20">
+                <Award className="w-3 h-3 text-[#D4AF37]" />
+              </div>
+              <span className="text-[#D4AF37] text-xs md:text-sm font-medium">
+                2026 Quality Business Award Winner
+              </span>
+              <ArrowRight className="w-3.5 h-3.5 text-[#D4AF37]/60 group-hover:text-[#D4AF37] group-hover:translate-x-0.5 transition-all" />
+            </a>
+
             {/* Headline with enhanced gradient */}
             <div>
               <h1 className="text-white mb-6 text-3xl md:text-4xl lg:text-5xl leading-tight drop-shadow-2xl">

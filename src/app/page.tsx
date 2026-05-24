@@ -7,6 +7,7 @@ import { ServicesSection } from "@/components/ServicesSection";
 import { PortfolioSection } from "@/components/PortfolioSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { ContactSection } from "@/components/ContactSection";
+import { AwardsSection } from "@/components/AwardsSection";
 import { Footer } from "@/components/Footer";
 import { PortfolioPage } from "@/components/PortfolioPage";
 import { Toaster } from "@/components/ui/sonner";
@@ -44,6 +45,7 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
+        <AwardsSection />
         <AboutSection />
         <ServicesSection />
         <PortfolioSection />
