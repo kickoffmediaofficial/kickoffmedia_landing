@@ -17,18 +17,22 @@ import {
 import { MarketingCampaigns } from "@/types/marketing";
 import { CaseStudiesSection } from "./CaseStudiesSection";
 
-const objectiveIcons = {
+const objectiveIcons: Record<string, React.ElementType> = {
   "Messaging Conversations": MessageSquare,
   "Link Clicks": MousePointerClick,
   Engagement: Users,
   ThruPlays: Play,
+  Traffic: MousePointerClick,
+  Awareness: Zap,
 };
 
-const objectiveColors = {
+const objectiveColors: Record<string, string> = {
   "Messaging Conversations": "from-blue-500 to-cyan-500",
   "Link Clicks": "from-green-500 to-emerald-500",
   Engagement: "from-purple-500 to-pink-500",
   ThruPlays: "from-orange-500 to-red-500",
+  Traffic: "from-teal-500 to-cyan-500",
+  Awareness: "from-yellow-500 to-amber-500",
 };
 
 export function MarketingPortfolio() {
@@ -169,8 +173,8 @@ export function MarketingPortfolio() {
         {/* Campaigns Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-\ md:gap-8">
           {filteredCampaigns.map((campaign) => {
-            const ObjectiveIcon = objectiveIcons[campaign.objective];
-            const gradientClass = objectiveColors[campaign.objective];
+            const ObjectiveIcon = objectiveIcons[campaign.objective] || Zap;
+            const gradientClass = objectiveColors[campaign.objective] || "from-blue-500 to-cyan-500";
 
             return (
               <Card

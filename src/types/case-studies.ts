@@ -1,3 +1,9 @@
+export interface CaseStudyMetric {
+  label: string;
+  value: string;
+  icon?: "users" | "cart" | "dollar" | "trending" | "eye" | "message" | "click" | "megaphone" | "search" | "globe";
+}
+
 export interface CaseStudyMetrics {
   sessions: number;
   totalSales: number;
@@ -6,6 +12,7 @@ export interface CaseStudyMetrics {
   spending?: number;
   profit?: number;
   currency?: string;
+  custom?: CaseStudyMetric[];
 }
 
 export interface CaseStudy {
@@ -19,6 +26,31 @@ export interface CaseStudy {
 }
 
 export const CaseStudies: CaseStudy[] = [
+  {
+    id: "essential-salon",
+    title: "Essential Hair Salon — Full Digital Growth",
+    description:
+      "Executed a full-stack digital marketing strategy for Essential Hair Salon in Kirkland, WA — combining SEO content marketing, Meta Ads campaigns, and website optimization. Grew Google Search visibility from 60 to 2,800+ daily impressions, published high-ranking blog content capturing competitive keywords, and ran hyper-efficient paid campaigns totaling just $298 in ad spend.",
+    results:
+      "Achieved 310K+ Google Search impressions with 3,900+ organic clicks, ranking #1 for branded terms and top 5 for competitive local queries like \"hair salon kirkland.\" Blog content like 'Partial Foil vs Balayage' alone generated 34K+ impressions. Meta Ads reached 26,685 people driving 95 appointment page views and 29 direct leads. Website attracted 204 unique users from Google, Facebook, Instagram, and AI assistants like ChatGPT — all on under $300 total ad spend.",
+    dateRange: "November 2025 — September 2026",
+    metrics: {
+      sessions: 415,
+      totalSales: 0,
+      orders: 0,
+      conversionRate: 0,
+      spending: 298.62,
+      currency: "USD",
+      custom: [
+        { label: "Search Impressions", value: "310K+", icon: "search" },
+        { label: "Organic Clicks", value: "3,900+", icon: "click" },
+        { label: "Impression Growth", value: "40x", icon: "trending" },
+        { label: "People Reached (Ads)", value: "26,685", icon: "users" },
+        { label: "Keywords Ranked", value: "1,000+", icon: "megaphone" },
+        { label: "Total Ad Spend", value: "$298.62", icon: "dollar" },
+      ],
+    },
+  },
   {
     id: "1",
     title: "E-Commerce Store Performance",

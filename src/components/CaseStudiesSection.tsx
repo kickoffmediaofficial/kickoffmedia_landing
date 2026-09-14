@@ -1,8 +1,22 @@
 "use client";
 import { Card } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { TrendingUp, ShoppingCart, Users, DollarSign, Calendar, Target, ArrowUpRight } from "lucide-react";
+import { TrendingUp, ShoppingCart, Users, DollarSign, Calendar, Target, ArrowUpRight, Eye, MessageCircle, MousePointerClick, Megaphone, Search, Globe } from "lucide-react";
 import { CaseStudies } from "@/types/case-studies";
+import type { CaseStudyMetric } from "@/types/case-studies";
+
+const metricIcons: Record<string, React.ElementType> = {
+  users: Users,
+  cart: ShoppingCart,
+  dollar: DollarSign,
+  trending: TrendingUp,
+  eye: Eye,
+  message: MessageCircle,
+  click: MousePointerClick,
+  megaphone: Megaphone,
+  search: Search,
+  globe: Globe,
+};
 
 export function CaseStudiesSection() {
   const formatCurrency = (amount: number, currency: string = "AED") => {
@@ -31,10 +45,12 @@ export function CaseStudiesSection() {
 
       {/* Case Studies Grid */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
-        {CaseStudies.map((caseStudy) => (
+        {CaseStudies.map((caseStudy, index) => {
+          const isFeatured = index === 0 && caseStudy.metrics.custom && caseStudy.metrics.custom.length > 4;
+          return (
           <Card
             key={caseStudy.id}
-            className="bg-black/20 gap-0 from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 overflow-hidden group hover:border-[#4AA3FF]/60 hover:shadow-2xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 hover:-translate-y-2"
+            className={`bg-black/20 gap-0 from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 overflow-hidden group hover:border-[#4AA3FF]/60 hover:shadow-2xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 hover:-translate-y-2 ${isFeatured ? "lg:col-span-2" : ""}`}
           >
             {/* Header with Pink/Magenta Background */}
             <div className="p-6 relative overflow-hidden">
@@ -61,40 +77,57 @@ export function CaseStudiesSection() {
 
             {/* Metrics Grid */}
             <div className="px-6 pb-6">
-              <div className="grid grid-cols-2 gap-4 mb-4">
-                <div className="p-4 bg-gradient-to-br from-[#0F6EEA]/20 to-[#4AA3FF]/10 rounded-lg border border-[#4AA3FF]/20">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Users className="text-[#4AA3FF] w-4 h-4" />
-                    <span className="text-white/70 text-xs">Sessions</span>
-                  </div>
-                  <div className="text-2xl font-bold text-white">{caseStudy.metrics.sessions}</div>
-                </div>
+              <div className={`grid gap-4 mb-4 ${isFeatured ? "grid-cols-2 md:grid-cols-3" : "grid-cols-2"}`}>
+                {caseStudy.metrics.custom ? (
+                  caseStudy.metrics.custom.map((metric: CaseStudyMetric, idx: number) => {
+                    const Icon = metricIcons[metric.icon || "trending"] || TrendingUp;
+                    return (
+                      <div key={idx} className="p-4 bg-gradient-to-br from-[#0F6EEA]/20 to-[#4AA3FF]/10 rounded-lg border border-[#4AA3FF]/20">
+                        <div className="flex items-center gap-2 mb-2">
+                          <Icon className="text-[#4AA3FF] w-4 h-4" />
+                          <span className="text-white/70 text-xs">{metric.label}</span>
+                        </div>
+                        <div className="text-xl font-bold text-white">{metric.value}</div>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <>
+                    <div className="p-4 bg-gradient-to-br from-[#0F6EEA]/20 to-[#4AA3FF]/10 rounded-lg border border-[#4AA3FF]/20">
+                      <div className="flex items-center gap-2 mb-2">
+                        <Users className="text-[#4AA3FF] w-4 h-4" />
+                        <span className="text-white/70 text-xs">Sessions</span>
+                      </div>
+                      <div className="text-2xl font-bold text-white">{caseStudy.metrics.sessions}</div>
+                    </div>
 
-                <div className="p-4 bg-gradient-to-br from-[#0F6EEA]/20 to-[#4AA3FF]/10 rounded-lg border border-[#4AA3FF]/20">
-                  <div className="flex items-center gap-2 mb-2">
-                    <ShoppingCart className="text-[#4AA3FF] w-4 h-4" />
-                    <span className="text-white/70 text-xs">Orders</span>
-                  </div>
-                  <div className="text-2xl font-bold text-white">{caseStudy.metrics.orders}</div>
-                </div>
+                    <div className="p-4 bg-gradient-to-br from-[#0F6EEA]/20 to-[#4AA3FF]/10 rounded-lg border border-[#4AA3FF]/20">
+                      <div className="flex items-center gap-2 mb-2">
+                        <ShoppingCart className="text-[#4AA3FF] w-4 h-4" />
+                        <span className="text-white/70 text-xs">Orders</span>
+                      </div>
+                      <div className="text-2xl font-bold text-white">{caseStudy.metrics.orders}</div>
+                    </div>
 
-                <div className="p-4 bg-gradient-to-br from-[#0F6EEA]/20 to-[#4AA3FF]/10 rounded-lg border border-[#4AA3FF]/20">
-                  <div className="flex items-center gap-2 mb-2">
-                    <DollarSign className="text-[#4AA3FF] w-4 h-4" />
-                    <span className="text-white/70 text-xs">Total Sales</span>
-                  </div>
-                  <div className="text-xl font-bold text-white">
-                    {formatCurrency(caseStudy.metrics.totalSales, caseStudy.metrics.currency)}
-                  </div>
-                </div>
+                    <div className="p-4 bg-gradient-to-br from-[#0F6EEA]/20 to-[#4AA3FF]/10 rounded-lg border border-[#4AA3FF]/20">
+                      <div className="flex items-center gap-2 mb-2">
+                        <DollarSign className="text-[#4AA3FF] w-4 h-4" />
+                        <span className="text-white/70 text-xs">Total Sales</span>
+                      </div>
+                      <div className="text-xl font-bold text-white">
+                        {formatCurrency(caseStudy.metrics.totalSales, caseStudy.metrics.currency)}
+                      </div>
+                    </div>
 
-                <div className="p-4 bg-gradient-to-br from-[#0F6EEA]/20 to-[#4AA3FF]/10 rounded-lg border border-[#4AA3FF]/20">
-                  <div className="flex items-center gap-2 mb-2">
-                    <TrendingUp className="text-[#4AA3FF] w-4 h-4" />
-                    <span className="text-white/70 text-xs">Conversion</span>
-                  </div>
-                  <div className="text-xl font-bold text-white">{caseStudy.metrics.conversionRate}%</div>
-                </div>
+                    <div className="p-4 bg-gradient-to-br from-[#0F6EEA]/20 to-[#4AA3FF]/10 rounded-lg border border-[#4AA3FF]/20">
+                      <div className="flex items-center gap-2 mb-2">
+                        <TrendingUp className="text-[#4AA3FF] w-4 h-4" />
+                        <span className="text-white/70 text-xs">Conversion</span>
+                      </div>
+                      <div className="text-xl font-bold text-white">{caseStudy.metrics.conversionRate}%</div>
+                    </div>
+                  </>
+                )}
               </div>
 
               {/* Additional Metrics */}
@@ -123,7 +156,8 @@ export function CaseStudiesSection() {
               </div>
             </div>
           </Card>
-        ))}
+          );
+        })}
       </div>
     </div>
   );

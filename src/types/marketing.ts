@@ -3,7 +3,7 @@ export interface MarketingCampaign {
   clientName: string;
   campaignName: string;
   industry: string;
-  objective: "Messaging Conversations" | "Link Clicks" | "Engagement" | "ThruPlays";
+  objective: "Messaging Conversations" | "Link Clicks" | "Engagement" | "ThruPlays" | "Traffic" | "Awareness";
   metrics: {
     primaryMetric: {
       value: number;
@@ -188,6 +188,132 @@ export const MarketingCampaigns: MarketingCampaign[] = [
     duration: "2 weeks",
     status: "Active",
     description: "Ongoing campaign delivering exceptional video engagement at record-low costs.",
+  },
+  {
+    id: "9",
+    clientName: "Essential Hair Salon",
+    campaignName: "Brand Awareness Campaign",
+    industry: "Hair & Beauty",
+    objective: "Awareness",
+    metrics: {
+      primaryMetric: {
+        value: 12801,
+        label: "People Reached",
+        costPerUnit: 0.002,
+      },
+      amountSpent: 27.42,
+      dailyBudget: 10,
+      reach: 12801,
+      impressions: 13449,
+    },
+    duration: "4 days",
+    status: "Completed",
+    description: "Hyper-efficient brand awareness campaign putting Essential Hair Salon in front of 12,800+ Kirkland locals at just $2.04 CPM.",
+  },
+  {
+    id: "10",
+    clientName: "Essential Hair Salon",
+    campaignName: "Appointment Booking Campaign",
+    industry: "Hair & Beauty",
+    objective: "Traffic",
+    metrics: {
+      primaryMetric: {
+        value: 95,
+        label: "Appointment Page Views",
+        costPerUnit: 0.63,
+      },
+      amountSpent: 59.92,
+      dailyBudget: 15,
+      reach: 7632,
+      impressions: 8918,
+    },
+    duration: "4 days",
+    status: "Completed",
+    description: "Drove 95 appointment page views at $0.63 each, directly filling the salon's booking calendar with qualified local traffic.",
+  },
+  {
+    id: "11",
+    clientName: "Essential Hair Salon",
+    campaignName: "Christmas Holiday Glow Campaign",
+    industry: "Hair & Beauty",
+    objective: "Messaging Conversations",
+    metrics: {
+      primaryMetric: {
+        value: 29,
+        label: "Messaging Conversations Started",
+        costPerUnit: 4.39,
+      },
+      amountSpent: 127.36,
+      dailyBudget: 10,
+      reach: 3032,
+      impressions: 4300,
+    },
+    duration: "2 weeks",
+    status: "Completed",
+    description: "Seasonal promotion driving 29 direct messaging leads for holiday hair appointments, with strong engagement from the local Kirkland community.",
+  },
+  {
+    id: "12",
+    clientName: "Essential Hair Salon",
+    campaignName: "Instagram Growth Campaign",
+    industry: "Hair & Beauty",
+    objective: "Link Clicks",
+    metrics: {
+      primaryMetric: {
+        value: 154,
+        label: "Instagram Profile Visits",
+        costPerUnit: 0.28,
+      },
+      amountSpent: 42.81,
+      dailyBudget: 15,
+      reach: 2386,
+      impressions: 2937,
+    },
+    duration: "4 days",
+    status: "Completed",
+    description: "Targeted campaign driving 154 Instagram profile visits at just $0.28 each, rapidly growing the salon's Instagram following with qualified local audience.",
+  },
+  {
+    id: "13",
+    clientName: "Essential Hair Salon",
+    campaignName: "Facebook Engagement Campaign",
+    industry: "Hair & Beauty",
+    objective: "Engagement",
+    metrics: {
+      primaryMetric: {
+        value: 156,
+        label: "Post Engagements",
+        costPerUnit: 0.25,
+      },
+      amountSpent: 38.62,
+      dailyBudget: 15,
+      reach: 466,
+      impressions: 547,
+    },
+    duration: "3 days",
+    status: "Completed",
+    description: "Hyper-efficient engagement campaign building social proof with 156 post engagements at $0.25 each, boosting the salon's Facebook page visibility in Kirkland.",
+  },
+  {
+    id: "14",
+    clientName: "Essential Hair Salon",
+    campaignName: "Valentine's Glow Campaign",
+    industry: "Hair & Beauty",
+    objective: "Awareness",
+    metrics: {
+      primaryMetric: {
+        value: 137,
+        label: "Impressions",
+        costPerUnit: 0.02,
+      },
+      amountSpent: 2.49,
+      dailyBudget: 5,
+      reach: 108,
+      impressions: 137,
+    },
+    duration: "1 day",
+    status: "Completed",
+    description: "Quick Valentine's Day teaser campaign putting the salon's holiday glow offer in front of local Kirkland audience at ultra-low cost.",
   },
 ];
 
