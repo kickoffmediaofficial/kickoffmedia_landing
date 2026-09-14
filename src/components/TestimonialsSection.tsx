@@ -45,7 +45,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-[#0A1628] via-[#0F2847] to-[#0A1628] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-[#0F2847] via-[#0A1628] to-[#0A1628] relative overflow-hidden border-t border-[#4AA3FF]/10">
       {/* Background decorative elements */}
       <div className="absolute inset-0">
         <div className="absolute top-1/3 left-20 w-96 h-96 bg-[#0F6EEA] rounded-full mix-blend-multiply filter blur-3xl opacity-5"></div>
@@ -78,7 +78,7 @@ export function TestimonialsSection() {
 
               return (
                 <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/2">
-                  <Card className="bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 p-6 md:p-8 h-full hover:border-[#4AA3FF]/50 transition-all">
+                  <Card className="bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/8 backdrop-blur-sm border-[#4AA3FF]/45 shadow-lg shadow-[#050B14]/40 p-6 md:p-8 h-full hover:border-[#4AA3FF]/50 transition-all">
                     <div className="flex items-center mb-4 md:mb-6">
                       {hasImage ? (
                         <Image
@@ -86,7 +86,7 @@ export function TestimonialsSection() {
                           alt={testimonial.company}
                           width={64}
                           height={64}
-                          className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover mr-3 md:mr-4 ring-2 ring-[#4AA3FF]/30"
+                          className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover bg-white mr-3 md:mr-4 ring-2 ring-[#4AA3FF]/30"
                         />
                       ) : (
                         <div className="w-12 h-12 md:w-16 md:h-16 rounded-full bg-gradient-to-br from-[#0F6EEA] to-[#4AA3FF] flex items-center justify-center mr-3 md:mr-4 ring-2 ring-[#4AA3FF]/30">

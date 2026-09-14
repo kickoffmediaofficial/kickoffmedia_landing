@@ -15,6 +15,7 @@ import {
   Target,
 } from "lucide-react";
 import { MarketingCampaigns } from "@/types/marketing";
+import { MARKETING_TOTALS, formatCompactNumber } from "@/data/marketing-stats";
 import { CaseStudiesSection } from "./CaseStudiesSection";
 
 const objectiveIcons: Record<string, React.ElementType> = {
@@ -47,19 +48,6 @@ export function MarketingPortfolio() {
     const objectiveMatch = selectedObjective === "All" || campaign.objective === selectedObjective;
     return industryMatch && objectiveMatch;
   });
-
-  // Calculate aggregate stats
-  const totalConversations = MarketingCampaigns.reduce(
-    (sum, c) => sum + (c.objective === "Messaging Conversations" ? c.metrics.primaryMetric.value : 0),
-    0
-  );
-  const totalReach = MarketingCampaigns.reduce((sum, c) => sum + c.metrics.reach, 0);
-
-  const formatNumber = (num: number) => {
-    if (num >= 1000000) return `${(num / 1000000).toFixed(1)}M`;
-    if (num >= 1000) return `${(num / 1000).toFixed(1)}K`;
-    return num.toLocaleString();
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#050B14] via-[#0A1628] to-[#0F2847] py-20">
@@ -98,7 +86,9 @@ export function MarketingPortfolio() {
               <MessageSquare className="text-[#4AA3FF] w-8 h-8" />
               <TrendingUp className="text-green-400 w-5 h-5" />
             </div>
-            <div className="text-3xl font-bold text-white mb-1">{formatNumber(totalConversations)}</div>
+            <div className="text-3xl font-bold text-white mb-1">
+              {formatCompactNumber(MARKETING_TOTALS.conversations)}
+            </div>
             <div className="text-white/70 text-sm">Total Conversations</div>
           </Card>
 
@@ -107,8 +97,8 @@ export function MarketingPortfolio() {
               <Users className="text-[#4AA3FF] w-8 h-8" />
               <TrendingUp className="text-green-400 w-5 h-5" />
             </div>
-            <div className="text-3xl font-bold text-white mb-1">{formatNumber(totalReach)}</div>
-            <div className="text-white/70 text-sm">Total Reach</div>
+            <div className="text-3xl font-bold text-white mb-1">{formatCompactNumber(MARKETING_TOTALS.reach)}</div>
+            <div className="text-white/70 text-sm">Total Reach (across campaigns)</div>
           </Card>
 
           <Card className="bg-gradient-to-br from-[#0F6EEA]/20 to-[#4AA3FF]/10 backdrop-blur-sm border-[#4AA3FF]/30 p-6">
@@ -116,7 +106,7 @@ export function MarketingPortfolio() {
               <BarChart3 className="text-[#4AA3FF] w-8 h-8" />
               <TrendingUp className="text-green-400 w-5 h-5" />
             </div>
-            <div className="text-3xl font-bold text-white mb-1">{MarketingCampaigns.length}</div>
+            <div className="text-3xl font-bold text-white mb-1">{MARKETING_TOTALS.campaigns}</div>
             <div className="text-white/70 text-sm">Successful Campaigns</div>
           </Card>
         </div>
@@ -124,7 +114,7 @@ export function MarketingPortfolio() {
         {/* Filters */}
         <div className="mb-8 space-y-6">
           {/* Industry Filter */}
-          <Card className="bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 p-6">
+          <Card className="bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/8 backdrop-blur-sm border-[#4AA3FF]/45 shadow-lg shadow-[#050B14]/40 p-6">
             <div className="flex items-center gap-2 mb-4">
               <Filter className="text-[#4AA3FF] w-5 h-5" />
               <h3 className="text-white font-semibold text-lg">Filter by Industry</h3>
@@ -147,7 +137,7 @@ export function MarketingPortfolio() {
           </Card>
 
           {/* Objective Filter */}
-          <Card className="bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 p-6">
+          <Card className="bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/8 backdrop-blur-sm border-[#4AA3FF]/45 shadow-lg shadow-[#050B14]/40 p-6">
             <div className="flex items-center gap-2 mb-4">
               <Target className="text-[#4AA3FF] w-5 h-5" />
               <h3 className="text-white font-semibold text-lg">Filter by Campaign Objective</h3>
@@ -171,7 +161,7 @@ export function MarketingPortfolio() {
         </div>
 
         {/* Campaigns Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-\ md:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
           {filteredCampaigns.map((campaign) => {
             const ObjectiveIcon = objectiveIcons[campaign.objective] || Zap;
             const gradientClass = objectiveColors[campaign.objective] || "from-blue-500 to-cyan-500";
@@ -179,7 +169,7 @@ export function MarketingPortfolio() {
             return (
               <Card
                 key={campaign.id}
-                className="gap-0 bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 overflow-hidden group hover:border-[#4AA3FF]/60 hover:shadow-2xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 hover:-translate-y-2"
+                className="gap-0 bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/8 backdrop-blur-sm border-[#4AA3FF]/45 shadow-lg shadow-[#050B14]/40 overflow-hidden group hover:border-[#4AA3FF]/60 hover:shadow-2xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 hover:-translate-y-2"
               >
                 {/* Header */}
                 <div className={`bg-gradient-to-r p-6 relative overflow-hidden`}>
@@ -231,11 +221,11 @@ export function MarketingPortfolio() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="p-3 bg-[#0A1628]/50 rounded-lg border border-[#4AA3FF]/10">
                       <div className="text-white/60 text-xs mb-1">Reach</div>
-                      <div className="text-white font-semibold">{formatNumber(campaign.metrics.reach)}</div>
+                      <div className="text-white font-semibold">{formatCompactNumber(campaign.metrics.reach)}</div>
                     </div>
                     <div className="p-3 bg-[#0A1628]/50 rounded-lg border border-[#4AA3FF]/10">
                       <div className="text-white/60 text-xs mb-1">Impressions</div>
-                      <div className="text-white font-semibold">{formatNumber(campaign.metrics.impressions)}</div>
+                      <div className="text-white font-semibold">{formatCompactNumber(campaign.metrics.impressions)}</div>
                     </div>
                   </div>
                 </div>
@@ -250,7 +240,7 @@ export function MarketingPortfolio() {
         {/* CTA Section */}
         <Card
           style={{ marginTop: "24px" }}
-          className="gap-0 bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 overflow-hidden group hover:border-[#4AA3FF]/60 hover:shadow-2xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 hover:-translate-y-2"
+          className="gap-0 bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/8 backdrop-blur-sm border-[#4AA3FF]/45 shadow-lg shadow-[#050B14]/40 overflow-hidden group hover:border-[#4AA3FF]/60 hover:shadow-2xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 hover:-translate-y-2"
         >
           {/* Header */}
           <div className="bg-gradient-to-r p-6 relative overflow-hidden">

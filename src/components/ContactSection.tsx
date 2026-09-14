@@ -22,7 +22,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="py-16 md:py-24 bg-gradient-to-br from-[#0F2847] via-[#1a4d7a] to-[#0F2847] relative overflow-hidden"
+      className="py-16 md:py-24 bg-gradient-to-b from-[#0A1628] via-[#1a4d7a] to-[#0A1628] relative overflow-hidden border-t border-[#4AA3FF]/10"
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0">
@@ -44,7 +44,7 @@ export function ContactSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
           {/* Contact Form */}
-          <Card className="bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 p-6 md:p-8">
+          <Card className="bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/8 backdrop-blur-sm border-[#4AA3FF]/45 shadow-lg shadow-[#050B14]/40 p-6 md:p-8">
             <form
               target="_blank"
               action="https://formsubmit.co/service@kickoffmedia.co"
@@ -107,7 +107,7 @@ export function ContactSection() {
 
           {/* Contact Information */}
           <div className="space-y-4 md:space-y-6">
-            <Card className="bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 p-4 md:p-6 hover:border-[#4AA3FF]/50 transition-all">
+            <Card className="bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/8 backdrop-blur-sm border-[#4AA3FF]/45 shadow-lg shadow-[#050B14]/40 p-4 md:p-6 hover:border-[#4AA3FF]/50 transition-all">
               <div className="flex items-start">
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-[#0F6EEA] to-[#4AA3FF] flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 shadow-lg shadow-[#0F6EEA]/30">
                   <Mail className="text-white" size={20} />
@@ -119,7 +119,7 @@ export function ContactSection() {
               </div>
             </Card>
 
-            <Card className="bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 p-4 md:p-6 hover:border-[#4AA3FF]/50 transition-all">
+            <Card className="bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/8 backdrop-blur-sm border-[#4AA3FF]/45 shadow-lg shadow-[#050B14]/40 p-4 md:p-6 hover:border-[#4AA3FF]/50 transition-all">
               <div className="flex items-start">
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-[#0F6EEA] to-[#4AA3FF] flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 shadow-lg shadow-[#0F6EEA]/30">
                   <Phone className="text-white" size={20} />
@@ -132,7 +132,7 @@ export function ContactSection() {
               </div>
             </Card>
 
-            <Card className="bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 p-4 md:p-6 hover:border-[#4AA3FF]/50 transition-all">
+            <Card className="bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/8 backdrop-blur-sm border-[#4AA3FF]/45 shadow-lg shadow-[#050B14]/40 p-4 md:p-6 hover:border-[#4AA3FF]/50 transition-all">
               <div className="flex items-start">
                 <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-[#0F6EEA] to-[#4AA3FF] flex items-center justify-center mr-3 md:mr-4 flex-shrink-0 shadow-lg shadow-[#0F6EEA]/30">
                   <MapPin className="text-white" size={20} />

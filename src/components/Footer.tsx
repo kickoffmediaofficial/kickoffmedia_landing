@@ -1,6 +1,17 @@
 import { Linkedin, Instagram, Facebook } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import logo from "@/assets/Logo.png";
+
+const quickLinks = [
+  { label: "Services", href: "/#services" },
+  { label: "Portfolio", href: "/#portfolio" },
+  { label: "Campaigns", href: "/marketing" },
+  { label: "Case Studies", href: "/marketing#case-studies" },
+  { label: "Contact", href: "/#contact" },
+];
+
+const currentYear = new Date().getFullYear();
 
 export function Footer() {
   return (
@@ -22,21 +33,16 @@ export function Footer() {
           <div>
             <h4 className="text-white mb-4 text-base md:text-lg">Quick Links</h4>
             <ul className="space-y-2">
-              <li>
-                <a href="#" className="text-white/70 hover:text-[#4AA3FF] transition-colors text-sm md:text-base">
-                  Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white/70 hover:text-[#4AA3FF] transition-colors text-sm md:text-base">
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white/70 hover:text-[#4AA3FF] transition-colors text-sm md:text-base">
-                  Careers
-                </a>
-              </li>
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-white/70 hover:text-[#4AA3FF] transition-colors text-sm md:text-base"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -77,7 +83,7 @@ export function Footer() {
         </div>
 
         <div className="border-t border-[#4AA3FF]/10 pt-6 md:pt-8 text-center">
-          <p className="text-white/70 text-sm md:text-base">© 2025 KickOff Media. All rights reserved.</p>
+          <p className="text-white/70 text-sm md:text-base">© {currentYear} KickOff Media. All rights reserved.</p>
         </div>
       </div>
     </footer>

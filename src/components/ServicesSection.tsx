@@ -1,4 +1,5 @@
 import { Card } from "./ui/card";
+import { MARKETING_TOTALS, formatCompactNumber } from "@/data/marketing-stats";
 import {
   Share2,
   Search,
@@ -46,7 +47,7 @@ export function ServicesSection() {
   return (
     <section
       id="services"
-      className="py-16 md:py-24 bg-gradient-to-br from-[#0A1628] via-[#0F2847] to-[#0A1628] relative overflow-hidden"
+      className="py-16 md:py-24 bg-gradient-to-b from-[#0F2847] via-[#0A1628] to-[#0A1628] relative overflow-hidden border-t border-[#4AA3FF]/10"
     >
       {/* Enhanced Background decorative elements */}
       <div className="absolute inset-0">
@@ -71,7 +72,7 @@ export function ServicesSection() {
 
         {/* Marketing Results Highlight */}
         <div className="mb-12 md:mb-16">
-          <Card className="relative bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 p-6 md:p-8 hover:bg-[#0F6EEA]/15 hover:border-[#4AA3FF]/50 hover:shadow-xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 group overflow-hidden hover:-translate-y-1">
+          <Card className="relative bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/8 backdrop-blur-sm border-[#4AA3FF]/45 shadow-lg shadow-[#050B14]/40 p-6 md:p-8 hover:bg-[#0F6EEA]/15 hover:border-[#4AA3FF]/50 hover:shadow-xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 group overflow-hidden hover:-translate-y-1">
             {/* Glowing effect on hover */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#0F6EEA]/0 to-[#4AA3FF]/0 group-hover:from-[#0F6EEA]/10 group-hover:to-[#4AA3FF]/10 transition-all duration-300"></div>
 
@@ -90,9 +91,14 @@ export function ServicesSection() {
                   </h3>
                   <p className="text-white/70 text-sm md:text-base mb-4">
                     Our campaigns have generated{" "}
-                    <span className="text-[#4AA3FF] font-semibold">2,881+ conversations</span>, reached{" "}
-                    <span className="text-[#4AA3FF] font-semibold">100K+ people</span>, and delivered exceptional ROI
-                    across multiple industries.
+                    <span className="text-[#4AA3FF] font-semibold">
+                      {MARKETING_TOTALS.conversations.toLocaleString()}+ conversations
+                    </span>{" "}
+                    and delivered{" "}
+                    <span className="text-[#4AA3FF] font-semibold">
+                      {formatCompactNumber(MARKETING_TOTALS.reach)} in reach
+                    </span>{" "}
+                    across {MARKETING_TOTALS.campaigns} campaigns and multiple industries.
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <button
@@ -114,17 +120,21 @@ export function ServicesSection() {
 
                 {/* Stats Grid */}
                 <div className="grid grid-cols-3 gap-3 lg:gap-4 w-full lg:w-auto">
-                  <div className="text-center p-3 lg:p-4 bg-[#0A1628]/30 rounded-lg border border-[#4AA3FF]/10 group-hover:border-[#4AA3FF]/30 transition-colors">
-                    <div className="text-xl md:text-2xl font-bold text-white mb-1">2,881+</div>
-                    <div className="text-white/60 text-xs">Conversations</div>
+                  <div className="text-center p-3 lg:p-4 bg-[#050B14]/60 rounded-lg border border-[#4AA3FF]/25 group-hover:border-[#4AA3FF]/50 transition-colors">
+                    <div className="text-xl md:text-2xl font-bold text-white mb-1">
+                      {MARKETING_TOTALS.conversations.toLocaleString()}+
+                    </div>
+                    <div className="text-white/70 text-xs">Conversations</div>
                   </div>
-                  <div className="text-center p-3 lg:p-4 bg-[#0A1628]/30 rounded-lg border border-[#4AA3FF]/10 group-hover:border-[#4AA3FF]/30 transition-colors">
-                    <div className="text-xl md:text-2xl font-bold text-white mb-1">100K+</div>
-                    <div className="text-white/60 text-xs">Reach</div>
+                  <div className="text-center p-3 lg:p-4 bg-[#050B14]/60 rounded-lg border border-[#4AA3FF]/25 group-hover:border-[#4AA3FF]/50 transition-colors">
+                    <div className="text-xl md:text-2xl font-bold text-white mb-1">
+                      {formatCompactNumber(MARKETING_TOTALS.reach)}
+                    </div>
+                    <div className="text-white/70 text-xs">Reach (across campaigns)</div>
                   </div>
-                  <div className="text-center p-3 lg:p-4 bg-[#0A1628]/30 rounded-lg border border-[#4AA3FF]/10 group-hover:border-[#4AA3FF]/30 transition-colors">
-                    <div className="text-xl md:text-2xl font-bold text-white mb-1">8</div>
-                    <div className="text-white/60 text-xs">Campaigns</div>
+                  <div className="text-center p-3 lg:p-4 bg-[#050B14]/60 rounded-lg border border-[#4AA3FF]/25 group-hover:border-[#4AA3FF]/50 transition-colors">
+                    <div className="text-xl md:text-2xl font-bold text-white mb-1">{MARKETING_TOTALS.campaigns}</div>
+                    <div className="text-white/70 text-xs">Campaigns</div>
                   </div>
                 </div>
               </div>
@@ -141,7 +151,7 @@ export function ServicesSection() {
             return (
               <Card
                 key={index}
-                className="relative bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 p-6 md:p-8 hover:bg-[#0F6EEA]/15 hover:border-[#4AA3FF]/50 hover:shadow-xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 group overflow-hidden hover:-translate-y-1"
+                className="relative bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/8 backdrop-blur-sm border-[#4AA3FF]/45 shadow-lg shadow-[#050B14]/40 p-6 md:p-8 hover:bg-[#0F6EEA]/15 hover:border-[#4AA3FF]/50 hover:shadow-xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 group overflow-hidden hover:-translate-y-1"
               >
                 {/* Glowing effect on hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-[#0F6EEA]/0 to-[#4AA3FF]/0 group-hover:from-[#0F6EEA]/10 group-hover:to-[#4AA3FF]/10 transition-all duration-300"></div>

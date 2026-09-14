@@ -2,16 +2,12 @@ import { useState, useEffect } from "react";
 import { Button } from "./ui/button";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
 import logo from "@/assets/Logo.png";
 import Link from "next/link";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const pathname = usePathname();
-  const router = useRouter();
-  console.log("pathname =>", pathname);
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);

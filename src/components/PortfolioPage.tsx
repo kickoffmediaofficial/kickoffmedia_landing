@@ -187,7 +187,7 @@ export function PortfolioPage({ onBack }: PortfolioPageProps) {
             <Card
               key={index}
               onClick={() => handleProjectClick(project.url)}
-              className="bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 overflow-hidden group hover:border-[#4AA3FF]/60 hover:shadow-2xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 hover:-translate-y-2 cursor-pointer relative"
+              className="bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/8 backdrop-blur-sm border-[#4AA3FF]/45 shadow-lg shadow-[#050B14]/40 overflow-hidden group hover:border-[#4AA3FF]/60 hover:shadow-2xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 hover:-translate-y-2 cursor-pointer relative"
             >
               {/* Glowing effect on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#0F6EEA]/0 to-[#4AA3FF]/0 group-hover:from-[#0F6EEA]/20 group-hover:to-[#4AA3FF]/10 transition-all duration-300 pointer-events-none"></div>

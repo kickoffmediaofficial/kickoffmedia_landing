@@ -9,7 +9,7 @@ const metrics = [
 
 export function AwardsSection() {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-[#050B14] via-[#0A1628] to-[#0F2847] relative overflow-hidden">
+    <section className="py-16 md:py-24 bg-gradient-to-b from-[#0F2847] via-[#0A1628] to-[#0A1628] relative overflow-hidden border-t border-[#4AA3FF]/10">
       <div className="absolute inset-0">
         <div
           className="absolute top-1/4 right-10 w-[400px] h-[400px] bg-[#D4AF37] rounded-full mix-blend-screen filter blur-3xl opacity-[0.06] animate-pulse"

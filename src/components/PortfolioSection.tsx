@@ -1,16 +1,12 @@
 import { Card } from "./ui/card";
 import { Button } from "./ui/button";
-import { ExternalLink, FolderOpen, TrendingUp, FileText } from "lucide-react";
+import { ExternalLink, TrendingUp, FileText } from "lucide-react";
 import Image from "next/image";
 import { Projects } from "@/types/projects";
 
 const mobileProjects = Projects.slice(0, 4);
 
 export function PortfolioSection() {
-  const handleShowMore = () => {
-    window.dispatchEvent(new CustomEvent("navigate", { detail: "portfolio" }));
-  };
-
   const handleProjectClick = (url: string) => {
     window.open(url, "_blank", "noopener,noreferrer");
   };
@@ -18,7 +14,7 @@ export function PortfolioSection() {
   return (
     <section
       id="portfolio"
-      className="py-20 md:py-24 bg-gradient-to-br from-[#0F2847] via-[#1a4d7a] to-[#0F2847] relative overflow-hidden"
+      className="py-20 md:py-24 bg-gradient-to-b from-[#0A1628] via-[#1a4d7a] to-[#0F2847] relative overflow-hidden border-t border-[#4AA3FF]/10"
     >
       {/* Enhanced Background decorative elements */}
       <div className="absolute inset-0">
@@ -46,7 +42,7 @@ export function PortfolioSection() {
           {Projects.map((project, index) => (
             <Card
               key={index}
-              className="bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 overflow-hidden group hover:border-[#4AA3FF]/50 hover:shadow-2xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 cursor-pointer relative hover:-translate-y-2"
+              className="bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/8 backdrop-blur-sm border-[#4AA3FF]/45 shadow-lg shadow-[#050B14]/40 overflow-hidden group hover:border-[#4AA3FF]/50 hover:shadow-2xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 cursor-pointer relative hover:-translate-y-2"
             >
               {/* Glowing effect on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#0F6EEA]/0 to-[#4AA3FF]/0 group-hover:from-[#0F6EEA]/10 group-hover:to-[#4AA3FF]/5 transition-all duration-300 pointer-events-none"></div>
@@ -58,16 +54,19 @@ export function PortfolioSection() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/80 via-[#0A1628]/20 to-transparent"></div>
-                <div className="absolute top-4 right-4 gap-2 flex">
-                  {project.category.map((item) => (
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/70 via-[#0A1628]/10 to-transparent"></div>
+                <div className="absolute top-3 right-3 gap-1.5 flex flex-wrap justify-end max-w-[calc(100%-1.5rem)]">
+                  <span className="px-2.5 py-1 bg-[#0A1628]/75 backdrop-blur-sm border border-[#4AA3FF]/40 text-white text-xs rounded-full shadow-lg">
+                    {project.category[0]}
+                  </span>
+                  {project.category.length > 1 && (
                     <span
-                      key={item}
-                      className="px-3 md:px-4 py-1.5 md:py-2 bg-gradient-to-r from-[#0F6EEA] to-[#4AA3FF] text-white text-xs md:text-sm rounded-full shadow-lg"
+                      title={project.category.slice(1).join(", ")}
+                      className="px-2.5 py-1 bg-[#0A1628]/75 backdrop-blur-sm border border-[#4AA3FF]/40 text-white/80 text-xs rounded-full shadow-lg"
                     >
-                      {item}
+                      +{project.category.length - 1}
                     </span>
-                  ))}
+                  )}
                 </div>
               </div>
               <div className="p-5 md:p-6 relative z-10">
@@ -100,7 +99,7 @@ export function PortfolioSection() {
           {mobileProjects.map((project, index) => (
             <Card
               key={index}
-              className="bg-gradient-to-br from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 overflow-hidden group hover:border-[#4AA3FF]/50 hover:shadow-2xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 cursor-pointer relative hover:-translate-y-2"
+              className="bg-gradient-to-br from-[#0F6EEA]/15 to-[#4AA3FF]/8 backdrop-blur-sm border-[#4AA3FF]/45 shadow-lg shadow-[#050B14]/40 overflow-hidden group hover:border-[#4AA3FF]/50 hover:shadow-2xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 cursor-pointer relative hover:-translate-y-2"
             >
               {/* Glowing effect on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#0F6EEA]/0 to-[#4AA3FF]/0 group-hover:from-[#0F6EEA]/10 group-hover:to-[#4AA3FF]/5 transition-all duration-300 pointer-events-none"></div>
@@ -112,11 +111,19 @@ export function PortfolioSection() {
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1628]/80 via-[#0A1628]/20 to-transparent"></div>
-                <div className="absolute top-4 right-4">
-                  <span className="px-3 md:px-4 py-1.5 md:py-2 bg-gradient-to-r from-[#0F6EEA] to-[#4AA3FF] text-white text-xs md:text-sm rounded-full shadow-lg">
-                    {project.category}
+                <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/70 via-[#0A1628]/10 to-transparent"></div>
+                <div className="absolute top-3 right-3 gap-1.5 flex flex-wrap justify-end max-w-[calc(100%-1.5rem)]">
+                  <span className="px-2.5 py-1 bg-[#0A1628]/75 backdrop-blur-sm border border-[#4AA3FF]/40 text-white text-xs rounded-full shadow-lg">
+                    {project.category[0]}
                   </span>
+                  {project.category.length > 1 && (
+                    <span
+                      title={project.category.slice(1).join(", ")}
+                      className="px-2.5 py-1 bg-[#0A1628]/75 backdrop-blur-sm border border-[#4AA3FF]/40 text-white/80 text-xs rounded-full shadow-lg"
+                    >
+                      +{project.category.length - 1}
+                    </span>
+                  )}
                 </div>
               </div>
               <div className="p-5 md:p-6 relative z-10">

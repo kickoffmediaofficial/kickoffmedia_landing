@@ -2,6 +2,8 @@ import { Button } from "./ui/button";
 import { ArrowRight, CheckCircle2, Users, Award, Sparkles, Zap } from "lucide-react";
 import { Badge } from "./ui/badge";
 import Link from "next/link";
+import Image from "next/image";
+import heroImage from "@/assets/hero-agency-team.jpg";
 
 export function HeroSection() {
   const scrollToSection = (id: string) => {
@@ -14,7 +16,7 @@ export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#050B14] via-[#0A1628] to-[#0F2847]"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-[#050B14] via-[#0A1628] to-[#0F2847]"
     >
       {/* Enhanced Animated background elements */}
       <div className="absolute inset-0">
@@ -38,10 +40,13 @@ export function HeroSection() {
             <div className="absolute inset-0 bg-gradient-to-br from-[#0F6EEA] via-[#4AA3FF] to-[#5BB4FF] rounded-2xl blur-2xl opacity-20"></div>
 
             <div className="relative h-full rounded-2xl overflow-hidden shadow-2xl shadow-[#0F6EEA]/30 border-2 border-[#4AA3FF]/30 hover:border-[#4AA3FF]/50 transition-all group">
-              <img
-                src="https://images.unsplash.com/photo-1758518732175-5d608ba3abdf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBidXNpbmVzcyUyMHRlYW18ZW58MXx8fHwxNzYxMjc0MDIxfDA&ixlib=rb-4.1.0&q=80&w=1080"
-                alt="Professional Business Team"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              <Image
+                src={heroImage}
+                alt="The KickOff Media team mapping out a campaign strategy"
+                fill
+                priority
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0F6EEA]/50 via-transparent to-transparent"></div>
 
@@ -127,25 +132,19 @@ export function HeroSection() {
               </Link>
             </div>
 
-            {/* Additional Navigation Links */}
-            <div className="flex flex-wrap gap-3">
-              <Link href="/marketing">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border hover:text-white bg-transparent border-[#4AA3FF]/40 text-[#4AA3FF] hover:bg-[#4AA3FF]/10 hover:border-[#4AA3FF]/60 transition-all text-sm"
-                >
-                  View Campaigns
-                </Button>
+            {/* Secondary links — kept as text so the primary CTA stays dominant */}
+            <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm">
+              <Link
+                href="/marketing"
+                className="text-[#4AA3FF] hover:text-white underline-offset-4 hover:underline transition-colors"
+              >
+                View Campaigns
               </Link>
-              <Link href="/marketing#case-studies">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="border hover:text-white bg-transparent border-[#4AA3FF]/40 text-[#4AA3FF] hover:bg-[#4AA3FF]/10 hover:border-[#4AA3FF]/60 transition-all text-sm"
-                >
-                  View Case Studies
-                </Button>
+              <Link
+                href="/marketing#case-studies"
+                className="text-[#4AA3FF] hover:text-white underline-offset-4 hover:underline transition-colors"
+              >
+                View Case Studies
               </Link>
             </div>
 

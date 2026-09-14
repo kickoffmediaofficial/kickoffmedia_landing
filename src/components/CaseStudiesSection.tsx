@@ -50,7 +50,7 @@ export function CaseStudiesSection() {
           return (
           <Card
             key={caseStudy.id}
-            className={`bg-black/20 gap-0 from-[#0F6EEA]/10 to-[#4AA3FF]/5 backdrop-blur-sm border-[#4AA3FF]/30 overflow-hidden group hover:border-[#4AA3FF]/60 hover:shadow-2xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 hover:-translate-y-2 ${isFeatured ? "lg:col-span-2" : ""}`}
+            className={`bg-black/20 gap-0 from-[#0F6EEA]/15 to-[#4AA3FF]/8 backdrop-blur-sm border-[#4AA3FF]/45 shadow-lg shadow-[#050B14]/40 overflow-hidden group hover:border-[#4AA3FF]/60 hover:shadow-2xl hover:shadow-[#0F6EEA]/20 transition-all duration-300 hover:-translate-y-2 ${isFeatured ? "lg:col-span-2" : ""}`}
           >
             {/* Header with Pink/Magenta Background */}
             <div className="p-6 relative overflow-hidden">
