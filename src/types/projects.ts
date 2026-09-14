@@ -5,12 +5,33 @@ import cover4 from "@/assets/PitchFi-cover.jpg";
 import cover5 from "@/assets/swippy-cover.jpg";
 import cover6 from "@/assets/MystifyingBardeen-cover.jpg";
 import cover7 from "@/assets/shopian-cover.jpg";
+import cover8 from "@/assets/BeautyEssence-cover.png";
+import cover9 from "@/assets/HybridHomeService-cover.png";
 import { Project, ProjectCategory } from ".";
 
 export const Projects: Project[] = [
   {
+    title: "Beauty Essence | Hair & Beauty Salon",
+    description:
+      "A premium hair and beauty salon website for Kirkland's top-rated salon, featuring service bookings, gallery, and blog.",
+    image: cover8,
+    category: [ProjectCategory.WebDevelopment, ProjectCategory.DigitalMarketing, ProjectCategory.SEO],
+    url: "https://beautyessence.salon/",
+    metrics: { duration: "2 months", platform: "Next.js, SEO" },
+  },
+  {
+    title: "Hybrid Home Service | Luxury Painting & Wallpaper",
+    description:
+      "A luxury painting and wallpaper installation service website for a licensed, bonded, and insured Washington State business.",
+    image: cover9,
+    category: [ProjectCategory.WebDevelopment, ProjectCategory.DigitalMarketing, ProjectCategory.SEO],
+    url: "https://hybridwallpaperhangers.com/",
+    metrics: { duration: "2 months", platform: "Next.js, SEO, Social Media" },
+  },
+  {
     title: "Essential Hair Salon",
-    description: "Designed the website for a hair salon.",
+    description:
+      "A modern, award-winning website for Kirkland's #1 rated hair salon, featuring online booking, services showcase, and SEO optimization.",
     image: cover1,
     category: [ProjectCategory.WebDevelopment, ProjectCategory.DigitalMarketing, ProjectCategory.SEO],
     url: "https://essential.salon/",
@@ -51,7 +72,6 @@ export const Projects: Project[] = [
     url: "https://competent-jennings-aee101.netlify.app/profile/User1",
     metrics: { duration: "4 months", platform: "MERN, Firebase" },
   },
-
   {
     title: "Shopian App - Online Marketplace",
     description:
