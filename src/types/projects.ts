@@ -7,6 +7,7 @@ import cover6 from "@/assets/MystifyingBardeen-cover.jpg";
 import cover7 from "@/assets/shopian-cover.jpg";
 import cover8 from "@/assets/BeautyEssence-cover.png";
 import cover9 from "@/assets/HybridHomeService-cover.png";
+import cover10 from "@/assets/Kickora-cover.png";
 import { Project, ProjectCategory } from ".";
 
 export const Projects: Project[] = [
@@ -27,6 +28,15 @@ export const Projects: Project[] = [
     category: [ProjectCategory.WebDevelopment, ProjectCategory.DigitalMarketing, ProjectCategory.SEO],
     url: "https://hybridwallpaperhangers.com/",
     metrics: { duration: "2 months", platform: "Next.js, SEO, Social Media" },
+  },
+  {
+    title: "KickOra | Cloud ERP for Finance Teams",
+    description:
+      "A multi-tenant accounting and ERP SaaS covering invoicing, purchases, bank reconciliation, sales tax and withholding, inventory, payroll and financial reports, all posted to one set of books.",
+    image: cover10,
+    category: [ProjectCategory.WebDevelopment, ProjectCategory.AppDevelopment],
+    url: "https://kickora.io/",
+    metrics: { duration: "Ongoing", platform: "SaaS, Multi-tenant ERP" },
   },
   {
     title: "Essential Hair Salon",
